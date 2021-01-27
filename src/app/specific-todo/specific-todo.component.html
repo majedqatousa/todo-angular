@@ -1,0 +1,33 @@
+
+<ng-template #noTodos>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h3>Loding todos ...</h3>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+<div class="row" *ngIf="todos; else noTodos">
+    <div class="col-md-6 border bg-light p-3 mx-auto">
+        <div class="card todoItem" *ngFor="let todo of todos">
+            <h5 class="card-header">{{ todo.date }}</h5>
+            <div class="card-body">
+                <div class="row gx-5">
+                    <div class="col-md-9">
+                        <h5 class="card-title">{{ todo.title }}</h5>
+                        <p class="card-text">{{ todo.description }}</p>
+                    </div>
+                    <div class="col-md-3 editdeleteBtn align-self-end">
+                        <a routerLink = "editTodo/{{ todo.id }}" class="btn btn-primary m-1">Edit</a>
+                        <a (click)="deleteTdo(todo.id)" class="btn btn-danger">Delete</a>
+        
+                    </div>
+        
+                </div>
+            
+              
+            </div>
+          </div>
+    </div>
+</div>

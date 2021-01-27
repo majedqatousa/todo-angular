@@ -1,0 +1,14 @@
+
+<h1 class="display-6">Categories</h1>
+<form #editcatForm (submit)="EditCat()">
+<label for="exampleDataList" class="form-label">Edit your category</label>
+<div class="row">
+    <div class="col-md-10">
+        <input class="form-control"  id="exampleDataList"  name = "name" [(ngModel)]="category.name"placeholder="ca">
+  
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-labeled btn-success">
+            <span class="btn-label"><i class="fa fa-pencil"></i></span></button>    </div>
+</div>
+</form>

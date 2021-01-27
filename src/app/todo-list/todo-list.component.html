@@ -1,0 +1,20 @@
+
+  <div class="card todoItem" *ngFor="let todo of todos">
+    <h5 class="card-header">{{ todo.date }}</h5>
+    <div class="card-body">
+        <div class="row gx-5">
+            <div class="col-md-9">
+                <h5 class="card-title">{{ todo.title }}</h5>
+                <p class="card-text">{{ todo.description }}</p>
+            </div>
+            <div class="col-md-3 editdeleteBtn align-self-end">
+                <a routerLink = "editTodo/{{ todo.id }}" class="btn btn-primary">Edit</a>
+                <a (click)="deleteTdo(todo.id)" class="btn btn-danger">Delete</a>
+
+            </div>
+
+        </div>
+    
+      
+    </div>
+  </div>

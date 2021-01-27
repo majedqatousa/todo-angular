@@ -1,0 +1,9 @@
+.todoAddForm{
+    border: 1px outset #EEEEEE;
+    border-radius: 15px;
+    background-color:#EEEEEE;     
+    padding: 15px;
+}
+.disDiv{
+    margin-top: 3px;
+}

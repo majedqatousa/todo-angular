@@ -1,0 +1,33 @@
+
+<h1 class="display-6">Categories</h1>
+<form #addcatForm (submit)="AddCat()">
+<label for="exampleDataList" class="form-label">Add a category</label>
+<div class="row">
+    <div class="col-md-10">
+        <input class="form-control" id="exampleDataList"  name = "name" [(ngModel)]="category.name"placeholder="Type to add...">
+
+    </div>
+    <div class="col-md-2">
+        <button type="submit" class="btn btn-labeled btn-success">
+            <span class="btn-label"><i class="fa fa-plus-circle"></i></span></button>    </div>
+</div>
+</form>
+
+<div class="row">
+    <div *ngFor="let cat of cats" class="col-md-8 bg-light catItem">
+        <div class="row">
+            <div class="col-md-8" routerLink = "cat/{{ cat.id }}">
+                <h5> {{ cat.name }}</h5>
+            </div>
+            <div class="col-md-4">
+                <span routerLink = "editcat/{{ cat.id }}"  class="btn-label m-2"><i class="fa fa-pencil"></i></span>
+                <span  (click)="deleteCat(cat.id)"  class="btn-label"><i class="fa fa-trash"></i></span>
+            </div>
+        </div>
+       
+
+    </div>
+
+
+</div>
+

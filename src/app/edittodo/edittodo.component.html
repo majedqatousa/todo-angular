@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6 border bg-light p-3 mx-auto">
+        <h1 class="display-6">ToDo</h1>
+        <form #EditTodoForm (submit)="EditTodo()">
+        <div class="form-group todoAddForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title"[(ngModel)]="todo.title" required>
+            
+                </div>
+                <div class="col-md-4">
+                    <input type="text" name="date" class="form-control" id="exampleFormControlInput1" placeholder="Date" [(ngModel)]="todo.date" >
+            
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select" name="category" aria-label="Default select example"  [(ngModel)]="todo.category_id" required>
+                        <option selected>select category</option>
+                        <option *ngFor="let cat of categories" value="{{ cat.id }}">{{ cat.name}}</option>
+                       
+                      </select>
+            
+                </div>
+                <div class="col-md-8 disDiv">
+                    <input type="text" name="description" class="form-control" id="exampleFormControlInput1" placeholder="description" [(ngModel)]="todo.description " required>
+            
+                </div>
+                <div class="col-md-4 disDiv">
+                    <input type="text" name="tags" class="form-control" id="exampleFormControlInput1" placeholder="tags" [(ngModel)]="todo.tags" >
+            
+                </div>
+                <div class="col-md-5">
+                    <button type="submit"  class="btn btn-success">Edit</button>
+                </div>
+                
+        
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
